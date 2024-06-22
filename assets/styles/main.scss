@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt {
+  margin: 0px;
+  color: $textColor;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: $fontFamilyPrimary;
+  line-height: 1.5rem;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.title {
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #34d399;
+    position: absolute;
+    bottom: 0px;
+    right: -5px;
+    border-radius: 0.2rem;
+    z-index: -1;
+  }
+}
