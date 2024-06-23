@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/main.scss'],
+  components: true,
 
   postcss: {
     plugins: {
@@ -10,5 +11,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ["@nuxt/eslint"]
+  srcDir: 'src/',
+
+  modules: ['@nuxt/eslint', '@nuxt/test-utils']
 })
