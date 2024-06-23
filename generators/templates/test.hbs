@@ -1,0 +1,10 @@
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+
+import {{pascalCase name}} from './{{pascalCase name}}.vue'
+import { expect, it } from 'vitest'
+
+it('<{{pascalCase name}} />', async () => {
+
+  const component = await mountSuspended({{pascalCase name}})
+  expect(component).toBeDefined()
+})
