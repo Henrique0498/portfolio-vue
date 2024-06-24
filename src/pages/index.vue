@@ -1,11 +1,5 @@
-<script>
-import _Typography from '~/components/Typography/Typography.vue'
-</script>
-
 <template>
-  <main
-    class="w-full h-full flex flex-col p-4 justify-center items-center text-emerald-950 bg-gradient-to-tr from-emerald-500 to-teal-700"
-  >
+  <main class="w-full h-screen flex flex-col p-4 justify-center items-center">
     <Typography class="title">Em construção</Typography>
     <p>Este projeto é feito em NuxtJS</p>
     <UDivider class="max-w-xl">
@@ -16,3 +10,7 @@ import _Typography from '~/components/Typography/Typography.vue'
     </ULink>
   </main>
 </template>
+
+<script>
+import _Typography from '~/components/Typography/Typography.vue'
+</script>

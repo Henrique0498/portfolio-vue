@@ -1,10 +1,19 @@
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <div class="App">
+      <Header />
+      <div class="AppBody">
+        <NuxtPage />
+      </div>
+      <Footer />
+    </div>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
+import Footer from './components/Footer/Footer.vue'
+import Header from './components/Header/Header.vue'
+
 useHead({
   title: 'Henrique Lopes',
   htmlAttrs: {

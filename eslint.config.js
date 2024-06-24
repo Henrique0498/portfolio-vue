@@ -9,7 +9,8 @@ export default createConfigForNuxt({
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'error',
       'vue/multi-word-component-names': 'off',
-      'vue/valid-v-bind': 'off'
+      'vue/valid-v-bind': 'off',
+      'vue/html-self-closing': 'off'
     }
   }
 )
