@@ -1,12 +1,9 @@
-.navContainer {
-  height: 5rem;
-  position: sticky;
+.navContainer,
+.sidebar {
   top: 0px;
   left: 0px;
   right: 0px;
   max-width: 100%;
-  display: flex;
-  justify-content: center;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(1rem) saturate(1.5);
   -webkit-tap-highlight-color: transparent;
@@ -15,6 +12,17 @@
   &.dark {
     background: $colorGray-950-85;
     color: $colorWhite;
+  }
+}
+
+.navContainer {
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+  position: sticky;
+  z-index: 100;
+
+  &.dark {
     height: 4rem;
   }
 
@@ -37,5 +45,104 @@
         text-wrap: nowrap;
       }
     }
+  }
+}
+
+.sidebar {
+  height: calc(100vh - 5rem);
+  position: fixed;
+  top: 5rem;
+  overflow-y: auto;
+  padding: 0.5rem 1.5rem;
+  z-index: 90;
+
+  ul {
+    li {
+      a,
+      p {
+        padding: 1rem;
+        justify-content: start;
+      }
+    }
+  }
+
+  &.dark {
+    top: 4rem;
+    height: calc(100vh - 4rem);
+  }
+}
+
+.bugger {
+  .text {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    tab-size: 4;
+
+    &::after,
+    &::before {
+      content: '';
+      height: 1px;
+      width: 1.5rem;
+      background-color: currentColor;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-property: transform;
+      transition-duration: 200ms;
+    }
+
+    &::before {
+      transform: matrix(1, 0, 0, 1, 0, -4);
+    }
+
+    &::after {
+      transform: matrix(1, 0, 0, 1, 0, 4);
+    }
+
+    &.open {
+      &::before {
+        transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 1);
+      }
+
+      &::after {
+        transform: matrix(0.707107, -0.707107, 0.707107, 0.707107, 0, 0);
+      }
+    }
+  }
+}
+
+.sidebar-enter-active,
+.sidebar-leave-active {
+  transition: opacity 200ms ease;
+}
+
+.sidebar-enter-from,
+.sidebar-leave-to {
+  opacity: 0;
+}
+
+.sidebar-enter-active .list {
+  animation: slide 200ms;
+}
+
+.sidebar-leave-active .list {
+  animation: slide 200ms reverse;
+}
+
+@keyframes slide {
+  from {
+    transform: translate3d(0, -3rem, 0);
+  }
+  to {
+    transform: translate3d(0, 0px, 0);
   }
 }
