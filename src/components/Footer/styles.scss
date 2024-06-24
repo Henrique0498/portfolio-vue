@@ -1,0 +1,14 @@
+.footerContainer {
+  color: $colorWhite;
+  background-color: $colorBlack;
+  padding: 1rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+}
