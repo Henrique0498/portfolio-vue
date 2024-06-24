@@ -1,0 +1,41 @@
+.navContainer {
+  height: 5rem;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(1rem) saturate(1.5);
+  -webkit-tap-highlight-color: transparent;
+  transition: 200ms ease-in-out;
+
+  &.dark {
+    background: $colorGray-950-85;
+    color: $colorWhite;
+    height: 4rem;
+  }
+
+  header {
+    padding: 0 1rem;
+    height: 100%;
+    width: 100%;
+    max-width: 1536px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      gap: 1rem;
+
+      li {
+        text-wrap: nowrap;
+      }
+    }
+  }
+}
