@@ -2,17 +2,16 @@
 <template>
   <div class="container">
     <div class="header" />
-    <div class="body" v-html="sanitizedHtml" />
+    <div class="body" v-html="rawHtml" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue'
+import { ref } from 'vue'
 import { codeToHtml } from 'shiki'
 import type { Languages, Theme } from './type'
-import DOMPurify from 'dompurify'
 import { _backgroundColor } from '#tailwind-config/theme'
-const sanitizedHtml = ref('')
+const rawHtml = ref('')
 const { code, theme, lang } = defineProps({
   code: {
     type: String,
@@ -29,12 +28,10 @@ const { code, theme, lang } = defineProps({
 })
 
 onBeforeMount(async () => {
-  const rawHtml = await codeToHtml(code, {
+  rawHtml.value = await codeToHtml(code, {
     lang,
     theme
   })
-
-  sanitizedHtml.value = DOMPurify.sanitize(rawHtml)
 })
 </script>
 
