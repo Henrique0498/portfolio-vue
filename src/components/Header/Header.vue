@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import Logo from '../Logo/Logo.vue'
 
 const colorMode = useColorMode()
@@ -61,7 +61,7 @@ const links = ref([
   }
 ])
 
-computed({
+const theme = computed({
   get() {
     return colorMode.value === 'dark'
   },
@@ -86,8 +86,12 @@ function handleResize() {
   }
 }
 
-onMounted(() => {
+onBeforeMount(() => {
   handleScroll()
+
+  if (theme.value) {
+    theme.value = false
+  }
 
   window.addEventListener('resize', handleResize)
 
