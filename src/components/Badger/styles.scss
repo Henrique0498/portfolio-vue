@@ -1,0 +1,31 @@
+.badger {
+  border-radius: 1rem;
+  height: fit-content;
+  padding: 0.25rem 0.75rem;
+  width: fit-content;
+
+  &.green {
+    background: $colorGreen-300;
+    color: $colorGreen-900;
+  }
+  &.red {
+    background: $colorRed-300;
+    color: $colorRed-900;
+  }
+  &.gray {
+    background: $colorGray-300;
+    color: $colorGray-900;
+  }
+  &.violet {
+    background: $colorViolet-300;
+    color: $colorViolet-900;
+  }
+  &.blue {
+    background: $colorBlue-300;
+    color: $colorBlue-900;
+  }
+  &.yellow {
+    background: $colorYellow-300;
+    color: $colorYellow-900;
+  }
+}
