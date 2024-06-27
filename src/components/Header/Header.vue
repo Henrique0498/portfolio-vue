@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue'
+import { ref, onBeforeMount, onMounted, onBeforeUnmount } from 'vue'
 import Logo from '../Logo/Logo.vue'
 
 const colorMode = useColorMode()
@@ -87,16 +87,24 @@ function handleResize() {
 }
 
 onBeforeMount(() => {
-  handleScroll()
-
   if (theme.value) {
     theme.value = false
   }
+})
+
+onMounted(() => {
+  handleScroll()
 
   window.addEventListener('resize', handleResize)
 
   window.addEventListener('scroll', handleScroll)
 })
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
-<style scoped src="./styles.scss" />
+<style lang="scss" scoped src="./styles.scss" />

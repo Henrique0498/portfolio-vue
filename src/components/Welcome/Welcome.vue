@@ -3,9 +3,9 @@
     <div>
       <div className="flex gap-2">
         <Badger color="green">Vue</Badger>
-        <Badger>React</Badger>
+        <Badger class="mx-2">React</Badger>
         <Badger color="blue">Typescript</Badger>
-        <Badger color="yellow">Javascript</Badger>
+        <Badger color="yellow" class="mx-2">Javascript</Badger>
       </div>
 
       <div class="welcome-text">

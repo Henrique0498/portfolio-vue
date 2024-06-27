@@ -17,4 +17,4 @@ defineProps({
 })
 </script>
 
-<style scoped src="./styles.scss" />
+<style lang="scss" scoped src="./styles.scss" />

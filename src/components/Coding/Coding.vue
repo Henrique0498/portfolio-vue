@@ -11,7 +11,7 @@ import { ref } from 'vue'
 import { codeToHtml } from 'shiki'
 import type { Languages, Theme } from './type'
 import { _backgroundColor } from '#tailwind-config/theme'
-const rawHtml = ref('')
+const rawHtml = ref<string>()
 const { code, theme, lang } = defineProps({
   code: {
     type: String,
@@ -27,12 +27,10 @@ const { code, theme, lang } = defineProps({
   }
 })
 
-onBeforeMount(async () => {
-  rawHtml.value = await codeToHtml(code, {
-    lang,
-    theme
-  })
+rawHtml.value = await codeToHtml(code, {
+  lang,
+  theme
 })
 </script>
 
-<style scoped src="./styles.scss" />
+<style lang="scss" scoped src="./styles.scss" />
