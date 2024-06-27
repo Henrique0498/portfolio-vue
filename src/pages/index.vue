@@ -1,9 +1,7 @@
 <template>
-  <main>
-    <Welcome />
-  </main>
+  <Home />
 </template>
 
-<script>
-import _Typography from '~/components/Typography/Typography.vue'
+<script setup lang="ts">
+import Home from '~/modules/landingPages/screens/Home/Home.vue'
 </script>
