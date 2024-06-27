@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  colorMode: {
+    preference: 'light'
+  },
   devtools: { enabled: true },
   css: ['~/assets/styles/main.scss'],
   components: true,
@@ -14,12 +17,12 @@ export default defineNuxtConfig({
       }
     }
   },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
-  },
   srcDir: 'src/',
-  modules: ['@nuxt/eslint', '@nuxt/test-utils', '@nuxt/ui', '@nuxt/icon']
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/eslint',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/test-utils',
+    '@nuxt/icon'
+  ]
 })
