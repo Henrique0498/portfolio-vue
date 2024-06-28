@@ -1,0 +1,55 @@
+.button {
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  column-gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  position: relative;
+  overflow: hidden;
+
+  &.primary {
+    color: $colorBlue-50;
+    background-color: $colorBlue-600;
+  }
+
+  &.light {
+    color: $colorGray-800;
+    background-color: $colorGray-200;
+  }
+
+  &.animationCircle {
+    animation: buttonAnimateScale 100ms ease-in-out alternate;
+
+    &::before {
+      content: '';
+      width: 1px;
+      height: 1px;
+      top: var(--click-y);
+      left: var(--click-x);
+      border-radius: 50%;
+      background-color: rgba(141, 141, 141, 0.2);
+      position: absolute;
+      animation: buttonAnimateCircle 300ms ease-in-out 100ms alternate;
+      z-index: 0;
+    }
+  }
+}
+
+@keyframes buttonAnimateScale {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes buttonAnimateCircle {
+  0% {
+    transform: scale(40);
+  }
+
+  100% {
+    transform: scale(300);
+  }
+}
