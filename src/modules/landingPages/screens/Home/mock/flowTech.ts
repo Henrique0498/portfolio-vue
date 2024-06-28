@@ -1,6 +1,6 @@
 import type { Edge } from '@vue-flow/core'
-import type { InFlowTechItemDefault } from '~/components/FlowTechnologyItemDefault/types'
-import type { InFlowTechItemMain } from '~/components/FlowTechnologyItemMain/types'
+import type { InFlowTechItemDefault } from '~/components/FlowTechnology/Item/Default/types'
+import type { InFlowTechItemMain } from '~/components/FlowTechnology/Item/Main/types'
 
 export const flowTechNodes: (InFlowTechItemDefault | InFlowTechItemMain)[] = [
   {

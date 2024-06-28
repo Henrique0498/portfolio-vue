@@ -10,13 +10,12 @@
           Exemplo de como as tecnologias funcionam.
         </p>
 
-        <UButton
+        <Button
           variant="solid"
-          color="blue"
           size="md"
           icon="i-heroicons-lock-open-solid"
           @click="unlock = !unlock"
-          >Desbloquear</UButton
+          >Desbloquear</Button
         >
 
         <div
@@ -35,25 +34,17 @@
       class="flowTech-flow"
     >
       <div class="absolute p-4 z-10 gap-2 flex">
-        <UButton
-          variant="solid"
-          color="blue"
-          icon="i-heroicons-lock-closed-solid"
-          size="md"
-          @click="unlock = !unlock"
-        >
+        <Button icon="i-heroicons-lock-closed-solid" @click="unlock = !unlock">
           Bloquear
-        </UButton>
+        </Button>
 
-        <UButton
+        <Button
           icon="i-heroicons-arrow-path"
-          variant="solid"
-          size="md"
-          color="gray"
+          color="light"
           @click="handleResize"
         >
           Restaurar
-        </UButton>
+        </Button>
       </div>
 
       <template #node-item="itemNodeProps">
@@ -86,12 +77,13 @@
 import { ref } from 'vue'
 import type { Edge } from '@vue-flow/core'
 import { VueFlow, useVueFlow } from '@vue-flow/core'
-import FlowTechnologyItemDefault from '../FlowTechnologyItemDefault/FlowTechnologyItemDefault.vue'
-import FlowTechnologyItemMain from '../FlowTechnologyItemMain/FlowTechnologyItemMain.vue'
-import type { InFlowTechItemMain } from '../FlowTechnologyItemMain/types'
-import type { InFlowTechItemDefault } from '../FlowTechnologyItemDefault/types'
+import FlowTechnologyItemDefault from './Item/Default/FlowTechnologyItemDefault.vue'
+import FlowTechnologyItemMain from './Item/Main/FlowTechnologyItemMain.vue'
+import type { InFlowTechItemMain } from './Item/Main/types'
+import type { InFlowTechItemDefault } from './Item/Default/types'
 import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
+import Button from '../Button/Button.vue'
 const { onConnect, addEdges } = useVueFlow()
 const unlock = ref(true)
 const loading = ref(true)

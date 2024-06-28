@@ -41,7 +41,7 @@ import { Handle, Position } from '@vue-flow/core'
 import type { NodeProps } from '@vue-flow/core'
 import { isIconData } from './types'
 import type { TyFlowTechData } from './types'
-import Image from '../Image/Image.vue'
+import Image from '~/components/Image/Image.vue'
 
 defineProps<NodeProps<TyFlowTechData>>()
 </script>
