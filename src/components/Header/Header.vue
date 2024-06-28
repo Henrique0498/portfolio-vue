@@ -42,10 +42,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onBeforeMount, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import Logo from '../Logo/Logo.vue'
-
-const colorMode = useColorMode()
 const isOpen = ref(false)
 const classBackground = ref('')
 const links = ref([
@@ -60,15 +58,6 @@ const links = ref([
     label: 'Projeto em NextJS'
   }
 ])
-
-const theme = computed({
-  get() {
-    return colorMode.value === 'dark'
-  },
-  set() {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-  }
-})
 
 function handleScroll() {
   const scrollHeight = window.scrollY
@@ -85,12 +74,6 @@ function handleResize() {
     isOpen.value = false
   }
 }
-
-onBeforeMount(() => {
-  if (theme.value) {
-    theme.value = false
-  }
-})
 
 onMounted(() => {
   handleScroll()
