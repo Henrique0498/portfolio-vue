@@ -1,9 +1,10 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 
-import Title from './Typography.vue'
+import Header from './Header.vue'
 import { expect, it } from 'vitest'
 
-it('<Typography/>', async () => {
-  const component = await mountSuspended(Title)
+it('<Header />', async () => {
+
+  const component = await mountSuspended(Header)
   expect(component).toBeDefined()
 })
