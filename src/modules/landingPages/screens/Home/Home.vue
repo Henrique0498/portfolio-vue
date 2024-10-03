@@ -3,7 +3,7 @@
     <Welcome class="col-span-4 lg:col-span-12" />
 
     <section class="description col-span-4 lg:col-span-12">
-      <div class="max-w-screen-2xl grid grid-cols-2 py-20">
+      <div class="max-w-screen-2xl lg:grid lg:grid-cols-2 py-20">
         <div class="description_header">
           <h2 class="title container_text">Apresentação</h2>
           <p>Uma breve descrição sobre mim.</p>
