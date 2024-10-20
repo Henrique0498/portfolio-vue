@@ -1,9 +1,9 @@
+@use 'utils/text' as *;
+@use 'utils/variables' as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import 'utils/text';
-@import 'utils/variables';
 
 * {
   box-sizing: border-box;

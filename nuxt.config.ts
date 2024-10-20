@@ -10,8 +10,10 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
+          api: 'modern-compiler',
           additionalData: `
             @use "~/assets/styles/utils/_text.scss" as *;
+            @use "~/assets/styles/utils/_variables.scss" as *;
           `
         }
       }
