@@ -36,7 +36,9 @@
           <p>Estas são as stacks que mais domino nesse momento.</p>
         </div>
         <div class="body">
-          <FlowTechnology :nodes="flowTechNodes" :edges="flowTechEdges" />
+          <ClientOnly fallback-tag="span" fallback="Carregando...">
+            <FlowTechnology :nodes="flowTechNodes" :edges="flowTechEdges" />
+          </ClientOnly>
         </div>
       </div>
     </section>
